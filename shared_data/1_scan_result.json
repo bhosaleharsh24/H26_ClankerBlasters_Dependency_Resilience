@@ -1,1 +1,59 @@
-
+{
+  "schema_version": "1.0",
+  "data_classification": "OBSERVED_AND_VERIFIED",
+  "repository_name": "demo_target_repo",
+  "scanned_at": "2026-10-15T09:10:46Z",
+  "at_risk_dependencies": [
+    {
+      "package_name": "pycrypto",
+      "installed_version": "2.6.1",
+      "manifest_file": "requirements.txt",
+      "risk_indicators": {
+        "days_since_last_release": 4500,
+        "is_deprecated": true,
+        "known_vulnerabilities_count": 4,
+        "cve_ids": [
+          "GHSA-6528-wvf6-f6qg",
+          "GHSA-cq27-v7xp-c356",
+          "PYSEC-2017-94",
+          "PYSEC-2018-97"
+        ],
+        "risk_level": "CRITICAL",
+        "risk_summary": "Unmaintained for 4500 days with 4 known security vulnerabilities."
+      },
+      "usage_locations": [
+        {
+          "usage_id": "usage_001",
+          "file_path": "app/crypto_utils.py",
+          "line_start": 3,
+          "line_end": 5,
+          "imported_statement": "from Crypto.Cipher import AES",
+          "called_symbols": [
+            "AES.new"
+          ],
+          "code_snippet": "from Crypto.Cipher import AES\n\ndef encrypt_token(token_bytes: bytes, key: bytes) -> bytes:\n    cipher = AES.new(key, AES.MODE_ECB)\n    return cipher.encrypt(token_bytes)"
+        }
+      ]
+    },
+    {
+      "package_name": "requests",
+      "installed_version": "2.31.0",
+      "manifest_file": "requirements.txt",
+      "risk_indicators": {
+        "days_since_last_release": 1241,
+        "is_deprecated": false,
+        "known_vulnerabilities_count": 6,
+        "cve_ids": [
+          "GHSA-9hjg-9r4m-mvj7",
+          "GHSA-9wx4-h78v-vm56",
+          "GHSA-gc5v-m9x4-r6x2",
+          "PYSEC-2026-1872",
+          "PYSEC-2026-1873"
+        ],
+        "risk_level": "CRITICAL",
+        "risk_summary": "Unmaintained for 1241 days with 6 known security vulnerabilities."
+      },
+      "usage_locations": []
+    }
+  ]
+}
