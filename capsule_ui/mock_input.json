@@ -1,0 +1,31 @@
+{
+  "dependency_details": {
+    "name": "urllib3",
+    "version": "1.24.1"
+  },
+  "risk_indicators": [
+    "Deprecation Warning: Old SSL/TLS handling pattern",
+    "High Vulnerability: CVE-2021-33503 (ReDoS in URL parsing)",
+    "Unmaintained major version"
+  ],
+  "usage_locations": [
+    {"file": "linkwatch/fetcher.py", "line": 14},
+    {"file": "linkwatch/utils.py", "line": 42}
+  ],
+  "proposed_replacement": "httpx @ 0.27.0",
+  "migration_steps": [
+    "Replace urllib3.PoolManager() with httpx.Client()",
+    "Update request syntax from http.request('GET', url) to client.get(url)",
+    "Replace custom exception handlers with httpx.HTTPError"
+  ],
+  "executed_test_results": {
+    "baseline_passed": true,
+    "migrated_passed": true
+  },
+  "compatibility_gaps": [
+    "httpx handles timeout parameters as a Timeout object rather than individual floats"
+  ],
+  "open_concerns": [
+    "Asynchronous requests need additional testing under heavy load"
+  ]
+}
