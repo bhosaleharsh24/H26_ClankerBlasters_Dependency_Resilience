@@ -1,2 +1,2 @@
-# H26_ClankerBlasters_
+# H26_ClankerBlasters_Dependency_Resilience
 ISTE hackday hacktoberfest 
