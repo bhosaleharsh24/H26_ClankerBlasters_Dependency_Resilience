@@ -17,11 +17,11 @@
 - `linkwatch/utils.py` (Line 42)
 
 ### 🧪 Test Execution Results
-- **Baseline Tests (Original Code):** ✅ PASSED
-- **Migrated Tests (With Replacement):** ✅ PASSED
+- **Baseline Tests (Original Code):** ❌ FAILED
+- **Migrated Tests (With Replacement):** ❌ FAILED
 
 ### ⚠️ Compatibility Gaps Identified
-- httpx handles timeout parameters as a Timeout object rather than individual floats
+- Pre-existing failure: Baseline repo tests were already failing prior to migration.
 
 ---
 
