@@ -1,1 +1,10 @@
-__pycache__/ 
+# Protect API keys
+.env
+
+# Ignore Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
